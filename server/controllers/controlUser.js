@@ -33,6 +33,7 @@ class ControlUser {
     }
 
     static register(req, res, next) {
+        // console.log(req.body, "<<")
         User.findOne({ where: { email: req.body.email } })
             .then(userAda => {
                 if (userAda) {
@@ -48,6 +49,7 @@ class ControlUser {
             .then(userRegistered => {
                 let token = generateToken({ id: userRegistered.id })
                 res.status(201).json({ userRegistered, token })
+                console.log(token, "<<")
             })
             .catch(err => {
                 next(err)

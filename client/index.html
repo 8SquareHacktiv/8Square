@@ -11,6 +11,8 @@
     <meta name="google-signin-client_id"
         content="573021986041-ogucqvrrqmh8i54gap5f1nq803qg4l2q.apps.googleusercontent.com">
 
+    <link rel="stylesheet" href="./index.css">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2:800|Muli&display=swap" rel="stylesheet">
     <title>8Square</title>
 </head>
 
@@ -79,7 +81,10 @@
         </div>
     </div>
     <div id="home">
-        <div class="btn btn-danger" id="logoutNow">Logout</div>
+        <h1>Hello World!</h1>
+        <!-- For testing function Google Maps. Open console log, and check the array -->
+        <button onclick="googleMaps('-6.260688,106.781563', '-6.265563,106.784313')">Klik saya</button>
+        <!-- End Test -->
     </div>
 
     <script>
@@ -95,16 +100,148 @@
             });
         }</script>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-    <script async defer crossorigin="anonymous"
-        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0&appId=181870176493798&autoLogAppEvents=1"></script>
+
+    <div id="loginPage"></div>
+    <div id="nav" class="nav">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand title" href="/">8Square</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto"></ul>
+            </div>
+            <button class="btn btn-danger" style="float: right;margin-right: 10px;" id="logoutNow">Logout
+    </div>
+    </nav>
+    </div>
+
+
+    <div class="review" id="review">
+        <div class="reviewDiv">
+            <div class="reviewPlace">
+                <div class="text">
+                    <h3>Place Name</h3>
+                    <div class="line"></div>
+                    <br>
+                    <h6><b>Full Address</b>: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea nesciunt enim
+                        blanditiis
+                        incidunt ratione expedita maiores</h6>
+                    <h6><b>Type Place</b>: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea nesciunt enim
+                        blanditiis
+                        incidunt ratione expedita maiores</h6>
+                    <h6><b>Description Place</b>: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea nesciunt
+                        enim
+                        blanditiis
+                        incidunt ratione expedita maiores</h6>
+                    <br>
+                    <hr>
+                    <h4>Tell us, what do you feel!</h4>
+                    <div class="line"></div>
+                    <br>
+                    <form>
+                        <div class="form-group">
+                            <label for="review">Write Your Review</label>
+                            <textarea class="form-control" id="review" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <input type="radio" name="stars" value="1" />
+                                <span class="icon">★</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="stars" value="2" />
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="stars" value="3" />
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="stars" value="4" />
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="stars" value="5" />
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div class="reviewAll">
+                <h3>Look How They Feel!</h3>
+                <div class="line"></div>
+                <br>
+                <div class="reviewUser">
+                    <h5>User name <span style="float: right;">★★★★★</span></h5>
+                    <hr>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, sint qui. Magni sed assumenda
+                        quaerat nihil, quo perferendis quas ullam accusamus voluptatibus ad vel nam veniam cupiditate
+                        placeat dolorum corrupti.</p>
+                </div>
+                <div class="reviewUser">
+                    <h5>User name <span style="float: right;">★★★★★</span></h5>
+                    <hr>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, sint qui. Magni sed assumenda
+                        quaerat nihil, quo perferendis quas ullam accusamus voluptatibus ad vel nam veniam cupiditate
+                        placeat dolorum corrupti.</p>
+                </div>
+                <div class="reviewUser">
+                    <h5>User name <span style="float: right;">★★★★★</span></h5>
+                    <hr>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, sint qui. Magni sed assumenda
+                        quaerat nihil, quo perferendis quas ullam accusamus voluptatibus ad vel nam veniam cupiditate
+                        placeat dolorum corrupti.</p>
+                </div>
+                <div class="reviewUser">
+                    <h5>User name <span style="float: right;">★★★★★</span></h5>
+                    <hr>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, sint qui. Magni sed assumenda
+                        quaerat nihil, quo perferendis quas ullam accusamus voluptatibus ad vel nam veniam cupiditate
+                        placeat dolorum corrupti.</p>
+                </div>
+                <div class="reviewUser">
+                    <h5>User name <span style="float: right;">★★★★★</span></h5>
+                    <hr>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, sint qui. Magni sed assumenda
+                        quaerat nihil, quo perferendis quas ullam accusamus voluptatibus ad vel nam veniam cupiditate
+                        placeat dolorum corrupti.</p>
+                </div>
+                <div class="reviewUser">
+                    <h5>User name <span style="float: right;">★★★★★</span></h5>
+                    <hr>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, sint qui. Magni sed assumenda
+                        quaerat nihil, quo perferendis quas ullam accusamus voluptatibus ad vel nam veniam cupiditate
+                        placeat dolorum corrupti.</p>
+                </div>
+                <div class="reviewUser">
+                    <h5>User name <span style="float: right;">★★★★★</span></h5>
+                    <hr>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, sint qui. Magni sed assumenda
+                        quaerat nihil, quo perferendis quas ullam accusamus voluptatibus ad vel nam veniam cupiditate
+                        placeat dolorum corrupti.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
-        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -118,6 +255,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0&appId=181870176493798&autoLogAppEvents=1"></script>
     <script src="./src/main.js"></script>
     <script src="./src/oauth.js"></script>
     <script src="./src/facebook.js"></script>
