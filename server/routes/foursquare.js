@@ -1,6 +1,6 @@
-    const router = require('express').Router()
-    const Foursquare = require('../controllers/foursquare')
+const router = require('express').Router()
+const Foursquare = require('../controllers/foursquare')
 
-    router.get('/recommended', Foursquare.fetchRecommendation)
+router.get('/recomended', Foursquare.fetchRecommendation)
 
-    module.exports = router
+module.exports = router
