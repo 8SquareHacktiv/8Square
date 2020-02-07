@@ -81,9 +81,14 @@
         </div>
     </div>
     <div id="home">
-        <h1>Hello World!</h1>
+        <h1>Venues near you ....</h1>
         <!-- For testing function Google Maps. Open console log, and check the array -->
-        <button onclick="googleMaps('-6.260688,106.781563', '-6.265563,106.784313')">Klik saya</button>
+        <div>
+            <!-- hasil append -->
+            <div class="row" id="venues" style="align-content: center; cursor: pointer;">
+
+            </div>
+        </div>
         <!-- End Test -->
     </div>
 
@@ -98,13 +103,14 @@
                 'onsuccess': onSuccess,
                 'onfailure': onFailure
             });
-        }</script>
+        }
+    </script>
 
 
     <div id="loginPage"></div>
     <div id="nav" class="nav">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand title" href="/">8Square</a>
+            <a class="navbar-brand title" href="/" id="title-nav">8Square</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -147,94 +153,19 @@
                             <textarea class="form-control" id="review" rows="3"></textarea>
                         </div>
                         <div class="form-group">
-                            <label>
-                                <input type="radio" name="stars" value="1" />
-                                <span class="icon">★</span>
-                            </label>
-                            <label>
-                                <input type="radio" name="stars" value="2" />
-                                <span class="icon">★</span>
-                                <span class="icon">★</span>
-                            </label>
-                            <label>
-                                <input type="radio" name="stars" value="3" />
-                                <span class="icon">★</span>
-                                <span class="icon">★</span>
-                                <span class="icon">★</span>
-                            </label>
-                            <label>
-                                <input type="radio" name="stars" value="4" />
-                                <span class="icon">★</span>
-                                <span class="icon">★</span>
-                                <span class="icon">★</span>
-                                <span class="icon">★</span>
-                            </label>
-                            <label>
-                                <input type="radio" name="stars" value="5" />
-                                <span class="icon">★</span>
-                                <span class="icon">★</span>
-                                <span class="icon">★</span>
-                                <span class="icon">★</span>
-                                <span class="icon">★</span>
-                            </label>
+                            <label for="review">Give Your Rating</label>
+                            <br>
+                            <input type="number" id="rating">
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" id="submit-review" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
             </div>
-            <div class="reviewAll">
+            <div class="reviewAll" id="reviewAppend">
                 <h3>Look How They Feel!</h3>
                 <div class="line"></div>
                 <br>
-                <div class="reviewUser">
-                    <h5>User name <span style="float: right;">★★★★★</span></h5>
-                    <hr>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, sint qui. Magni sed assumenda
-                        quaerat nihil, quo perferendis quas ullam accusamus voluptatibus ad vel nam veniam cupiditate
-                        placeat dolorum corrupti.</p>
-                </div>
-                <div class="reviewUser">
-                    <h5>User name <span style="float: right;">★★★★★</span></h5>
-                    <hr>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, sint qui. Magni sed assumenda
-                        quaerat nihil, quo perferendis quas ullam accusamus voluptatibus ad vel nam veniam cupiditate
-                        placeat dolorum corrupti.</p>
-                </div>
-                <div class="reviewUser">
-                    <h5>User name <span style="float: right;">★★★★★</span></h5>
-                    <hr>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, sint qui. Magni sed assumenda
-                        quaerat nihil, quo perferendis quas ullam accusamus voluptatibus ad vel nam veniam cupiditate
-                        placeat dolorum corrupti.</p>
-                </div>
-                <div class="reviewUser">
-                    <h5>User name <span style="float: right;">★★★★★</span></h5>
-                    <hr>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, sint qui. Magni sed assumenda
-                        quaerat nihil, quo perferendis quas ullam accusamus voluptatibus ad vel nam veniam cupiditate
-                        placeat dolorum corrupti.</p>
-                </div>
-                <div class="reviewUser">
-                    <h5>User name <span style="float: right;">★★★★★</span></h5>
-                    <hr>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, sint qui. Magni sed assumenda
-                        quaerat nihil, quo perferendis quas ullam accusamus voluptatibus ad vel nam veniam cupiditate
-                        placeat dolorum corrupti.</p>
-                </div>
-                <div class="reviewUser">
-                    <h5>User name <span style="float: right;">★★★★★</span></h5>
-                    <hr>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, sint qui. Magni sed assumenda
-                        quaerat nihil, quo perferendis quas ullam accusamus voluptatibus ad vel nam veniam cupiditate
-                        placeat dolorum corrupti.</p>
-                </div>
-                <div class="reviewUser">
-                    <h5>User name <span style="float: right;">★★★★★</span></h5>
-                    <hr>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, sint qui. Magni sed assumenda
-                        quaerat nihil, quo perferendis quas ullam accusamus voluptatibus ad vel nam veniam cupiditate
-                        placeat dolorum corrupti.</p>
-                </div>
+                
             </div>
         </div>
     </div>
@@ -259,8 +190,9 @@
     <script async defer crossorigin="anonymous"
         src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0&appId=181870176493798&autoLogAppEvents=1"></script>
     <script src="./src/main.js"></script>
-    <script src="./src/oauth.js"></script>
     <script src="./src/facebook.js"></script>
+    <script src="./src/oauth.js"></script>
+    <script src="./src//vanues.js"></script>
     <script src="./src/switchPage.js"></script>
     <script src="./src/geolocation.js"></script>
     <script src="./src/handleError.js"></script>
