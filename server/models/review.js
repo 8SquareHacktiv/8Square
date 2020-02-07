@@ -35,8 +35,8 @@ module.exports = (sequelize, DataTypes) => {
   }, { sequelize })
   Review.associate = function (models) {
     // associations can be defined here
-    Review.belongsTo(models.User)
-    Review.belongsTo(models.Place)
+    Review.hasMany(models.User, { foreignKey: "id", as: "users" })
+    Review.hasMany(models.Place, { foreignKey: "id", as: "places" })
   };
   return Review;
 };
