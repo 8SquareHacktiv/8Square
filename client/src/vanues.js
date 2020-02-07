@@ -11,7 +11,7 @@ $(document).ready(function() {
   function postReview(id, form) {
     $.ajax({
       methods: 'post',
-      url: `${baseURL}/review`,
+      url: `${baseURL}/review/${id}`,
       data: form
     })
       .done(result => {
@@ -40,7 +40,6 @@ $(document).ready(function() {
       review: $('textarea#review').val(),
       rating: $('#rating').val()
     }
-    console.log(form)
     postReview(venueId, form)
   })
 
@@ -50,5 +49,33 @@ $(document).ready(function() {
     venueId = $(this).data('id')
     $('#home').hide()
     $('#review').show()
+    // getReview(venueId)
   })
+
+  function getReview(id) {
+    $.ajax({
+      methods: 'GET',
+      url: `${baseURL}/review/${id}`,
+      headers: {
+        token: localStorage.token
+      }
+    })
+      .done(result => {
+        setReview(result)
+      })
+      .fail(err => {
+        errorHandle(err)
+      })
+  }
+
+  function setReview(data) {
+    data[1].forEach(el => {
+      $('#reviewAppen').append(
+          `<div class="reviewUser">
+          <h5>User : ${el.UserId}<span style="float: right;">${el.rating}</span></h5>
+          <hr>
+          <p>${el.review}</p>
+      </div>`)
+    })
+  }
 })
