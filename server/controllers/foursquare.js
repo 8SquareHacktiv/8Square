@@ -5,7 +5,7 @@ class Foursquare {
     axios
       .get('https://api.foursquare.com/v2/venues/explore', {
         params: {
-          ll: req.body.ll,
+          ll: req.params.ll,
           client_id: process.env.CLIENT_ID4,
           client_secret: process.env.CLIENT_SECRET,
           v: '20200206'
@@ -30,8 +30,7 @@ class Foursquare {
         res.status(200).json({ venues: venues, locations: placeLL })
       })
       .catch(err => {
-        console.log(err)
-        res.status(400).json(err)
+        next(err)
       })
   }
 }

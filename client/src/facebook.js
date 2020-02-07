@@ -10,7 +10,7 @@ function statusChangeCallback(response) {
             let splitName = response.name.split(" ")
             let email = splitName[0].toLowerCase() + "facebook@mail.com"
             let username = response.name
-            $.ajax(`${basicURL}/users/facebook`, {
+            $.ajax(`${baseURL}/users/facebook`, {
                 type: "POST",
                 data: {
                     email,
