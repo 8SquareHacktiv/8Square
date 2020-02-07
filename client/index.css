@@ -1,5 +1,6 @@
 .body{
     background: #ff4931;
+    height: 100vh;
     transition: all .5s;
     padding: 1px;
 }
@@ -7,7 +8,7 @@
     width: 70%;
     margin: 100px auto;
     background: rgba(255,255,255,.5);
-    min-height: 400px;
+    height: 70%;
     display:table;
     position: relative;
     box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
@@ -179,5 +180,180 @@ box-shadow: inset 0 0 0 50px #fff
 }
 
 #register{
-    top: 40%
+    top: 40%;
+}
+body {
+    overflow-x: hidden;
+}
+
+#home {
+  position: relative;
+  margin-top: 100px;
+  padding: 0px 3%;
+}
+#home h1 {
+  font-family: 'Exo 2', sans-serif;
+}
+
+.nav {
+    position: fixed;
+    width: 100vw;
+    height: 10px;
+    top: 0;
+    background-color: white;
+    z-index: 9;
+}
+nav {
+  position: relative;
+  width: 100%;
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.4);
+  box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.4);
+}
+.title {
+    font-family: 'Exo 2', sans-serif;
+}
+
+.reviewDiv {
+    position: relative;
+    top: 0;
+    width: 100vw;
+    height: auto;
+    background-color: white;
+}
+.text {
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 60%;
+    transform: translateY(-60%);
+}
+
+.reviewPlace {
+    position: fixed;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    background-color: white;
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.5);
+    padding: 0px 3%;
+
+}
+.reviewPlace h3,.reviewPlace h4 {
+    color: rgba(0,0,0,0.8);
+    font-family: 'Exo 2', sans-serif;
+}
+.reviewPlace b {
+    text-decoration: underline;
+}
+.reviewPlace h6 {
+    font-family: 'Muli', sans-serif;
+    line-height: 30px;
+}
+.line {
+    position: relative;
+    width: 20px;
+    height: 2px;
+    background-color: black;
+}
+textarea {
+    resize: none;
+}
+.reviewAll {
+    position: relative;
+    float: right;
+    right: 0;
+    width: 50%;
+    height: auto;
+    min-height: 200vh;
+    padding: 100px 3%;
+}
+.reviewAll h3,.reviewAll h4 {
+    color: rgba(0,0,0,0.8);
+    font-family: 'Exo 2', sans-serif;
+}
+.reviewUser {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 10px 15px;
+    border-top: 1px solid rgba(0,0,0,0.4);
+    border-bottom: 1px solid rgba(0,0,0,0.4);
+    margin-bottom: 15px;
+}
+.reviewUser h5 {
+    font-family: 'Muli', sans-serif;
+    font-weight: 1000;
+}
+.reviewUser p {
+    font-family: 'Muli', sans-serif;
+}
+
+
+.rating {
+    display: inline-block;
+    position: relative;
+    height: 50px;
+    line-height: 50px;
+    font-size: 50px;
+}
+  
+.rating label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  cursor: pointer;
+}
+
+.rating label:last-child {
+  position: static;
+}
+
+.rating label:nth-child(1) {
+  z-index: 5;
+}
+
+.rating label:nth-child(2) {
+  z-index: 4;
+}
+
+.rating label:nth-child(3) {
+  z-index: 3;
+}
+
+.rating label:nth-child(4) {
+  z-index: 2;
+}
+
+.rating label:nth-child(5) {
+  z-index: 1;
+}
+
+.rating label input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.rating label .icon {
+  float: left;
+  color: transparent;
+}
+
+.rating label:last-child .icon {
+  color: #000;
+}
+
+.rating:not(:hover) label input:checked ~ .icon,
+.rating:hover label:hover input ~ .icon {
+  color: #09f;
+}
+
+.rating label input:focus:not(:checked) ~ .icon:last-child {
+  color: #000;
+  text-shadow: 0 0 5px #09f;
 }

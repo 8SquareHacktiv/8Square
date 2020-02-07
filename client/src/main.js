@@ -65,3 +65,32 @@ $(document).ready(function () {
     })
 
 });
+const arr = [];
+function googleMaps(start, end) {
+    const baseURL = "http://localhost:3000";
+    $.ajax({
+        method: "POST",
+        url: `${baseURL}/googleMaps`,
+        data: {
+            start: start,
+            end: end
+        }
+    })
+        .done(data => {
+            const start = data.data.origin_addresses[0];
+            const end = data.data.destination_addresses[0];
+            const distance = data.data.rows[0].elements[0].distance.value / 1000;
+            const duration = data.data.rows[0].elements[0].duration.text;
+            const obj = {
+                startPlace: start,
+                endPlace: end,
+                distance: distance,
+                duration: duration
+            }
+            arr.push(obj);
+            console.log(arr);
+        })
+        .fail(err => {
+            errorHandle(err);
+        });
+}
